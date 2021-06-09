@@ -14,12 +14,15 @@ const TodoList = ({ todos = [], onRemovePressed, onCompletePressed, isLoading, s
     const content = (
         <div className = "list-wrapper">
             <NewTodoForm />
-            {todos.map((todo : any) => 
-                <TodoListItem
-                    todo={todo}
-                    onRemovePressed={onRemovePressed}
-                    onCompletePressed={onCompletePressed}/>
-            )}
+            {
+                todos.map((todo : any) => 
+                    <TodoListItem
+                        todo={todo}
+                        onRemovePressed={onRemovePressed}
+                        onCompletePressed={onCompletePressed}
+                    />
+                )
+            }
         </div>
     );
     return isLoading ? loadingMessage : content;
